@@ -7,6 +7,8 @@ sleep 10
 
 docker exec $CONTAINER_ID zap-cli open-url https://www.allizom.org/en-US/firefox/
 
+docker exec $CONTAINER_ID zap-cli spider https://www.allizom.org/en-US/firefox/
+
 # XXX - FIXME: not only should the hard-coded host be removed, but we should pass in more-aggressive active-scan options, here
 docker exec $CONTAINER_ID zap-cli active-scan https://www.allizom.org/en-US/firefox/
 
