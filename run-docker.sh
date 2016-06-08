@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-CONTAINER_ID=$(docker run -u zap -p 8080:8080 -d owasp/zap2docker-weekly zap.sh -daemon -port 8080 -host 0.0.0.0 -config api.disablekey=true)
+CONTAINER_ID=$(docker run -u zap --no-cache -p 8080:8080 -d owasp/zap2docker-weekly zap.sh -daemon -port 8080 -host 0.0.0.0 -config api.disablekey=true)
 
 # XXX - FIXME: should smartly listen for ZAP-readiness, rather than hard-code a sleep
 sleep 10
