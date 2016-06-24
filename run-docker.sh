@@ -3,7 +3,7 @@
 CONTAINER_ID=$(docker run -u zap -p 8090:8090 -d owasp/zap2docker-weekly zap.sh -daemon -port 8090 -host 0.0.0.0 -config api.disablekey=true)
 
 # XXX - FIXME: should smartly listen for ZAP-readiness, rather than hard-code a sleep
-sleep 10
+sleep 20
 
 docker exec $CONTAINER_ID zap-cli open-url https://www.allizom.org/en-US/firefox/
 
