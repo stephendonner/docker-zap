@@ -3,7 +3,7 @@
 CONTAINER_ID=$(docker run -u zap -p 2375:2375 -d owasp/zap2docker-weekly zap.sh -daemon -port 2375 -host 127.0.0.1 -config api.disablekey=true)
 
 # the target URL for ZAP to scan
-TARGET_URL=""
+TARGET_URL=$1
 
 docker exec $CONTAINER_ID zap-cli -p 2375 status -t 60 && docker exec $CONTAINER_ID zap-cli -p 2375 open-url $TARGET_URL
 
