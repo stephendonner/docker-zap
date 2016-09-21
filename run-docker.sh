@@ -16,9 +16,12 @@ docker exec $CONTAINER_ID zap-cli -p 2375 alerts
 
 # docker logs [container ID or name]
 divider===============================================================================
+printf \n
 printf "$divider"
 printf "ZAP-daemon log output follows"
 printf "$divider"
+printf \n
+
 docker logs $CONTAINER_ID
 
 docker stop $CONTAINER_ID
