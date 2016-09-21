@@ -15,6 +15,9 @@ docker exec $CONTAINER_ID zap-cli -p 2375 active-scan -r $TARGET_URL
 docker exec $CONTAINER_ID zap-cli -p 2375 alerts
 
 # docker logs [container ID or name]
+printf "-------------------------------------------------------------------------------"
+printf "ZAP-daemon log output follows"
+printf "-------------------------------------------------------------------------------"
 docker logs $CONTAINER_ID
 
 docker stop $CONTAINER_ID
