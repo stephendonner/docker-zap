@@ -15,7 +15,7 @@ docker exec $CONTAINER_ID zap-cli -p 2375 active-scan -r $TARGET_URL
 docker exec $CONTAINER_ID zap-cli -p 2375 alerts
 
 # docker logs [container ID or name]
-divider===============================================================================
+divider==================================================================
 printf "\n"
 printf "$divider"
 printf "ZAP-daemon log output follows"
