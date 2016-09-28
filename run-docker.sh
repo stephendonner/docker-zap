@@ -9,8 +9,7 @@ docker exec $CONTAINER_ID zap-cli -p 2375 status -t 60 && docker exec $CONTAINER
 
 docker exec $CONTAINER_ID zap-cli -p 2375 spider $TARGET_URL
 
-# XXX - FIXME: not only should the hard-coded host be removed, but we should pass in more-aggressive active-scan options, here
-docker exec $CONTAINER_ID zap-cli -p 2375 active-scan -r $TARGET_URL
+# docker exec $CONTAINER_ID zap-cli -p 2375 active-scan -r $TARGET_URL
 
 docker exec $CONTAINER_ID zap-cli -p 2375 alerts
 
