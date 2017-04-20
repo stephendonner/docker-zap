@@ -6,7 +6,7 @@ CONTAINER_ID=$(docker run -u root -p 2375:2375 -d thc202/zap2docker-dns zap.sh -
 # the target URL for ZAP to scan
 TARGET_URL=$1
 
-docker exec $CONTAINER_ID zap-cli -p 2375 status -t 60 && docker exec $CONTAINER_ID zap-cli -p 2375 open-url $TARGET_URL
+docker exec $CONTAINER_ID zap-cli -p 2375 status -t 120 && docker exec $CONTAINER_ID zap-cli -p 2375 open-url $TARGET_URL
 
 docker exec $CONTAINER_ID zap-cli -p 2375 spider $TARGET_URL
 
