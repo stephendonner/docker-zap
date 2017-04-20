@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-CONTAINER_ID=$(docker run -u zap -p 2375:2375 -d thc202/zap2docker-dns zap.sh -daemon -port 2375 -host 127.0.0.1 -config api.disablekey=true -config scanner.attackOnStart=true -config view.mode=attack -config connection.dnsTtlSuccessfulQueries=-1 -config api.addrs.addr.name=.* -config api.addrs.addr.regex=true -addoninstall ascanrules)
+CONTAINER_ID=$(docker run -u root -p 2375:2375 -d thc202/zap2docker-dns zap.sh -daemon -port 2375 -host 127.0.0.1 -config api.disablekey=true -config scanner.attackOnStart=true -config view.mode=attack -config connection.dnsTtlSuccessfulQueries=-1 -config api.addrs.addr.name=.* -config api.addrs.addr.regex=true -addoninstall ascanrules)
 
 # the target URL for ZAP to scan
 TARGET_URL=$1
